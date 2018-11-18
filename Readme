@@ -1,0 +1,12 @@
+
+
+Use positive lookahead assertions:
+
+var regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
+Without it, your current regex only matches that you have 6 to 16 valid characters, it doesn't validate that it has at least a number, and at least a special character. That's what the lookahead above is for.
+
+    (?=.*[0-9]) - Assert a string has at least one number;
+    (?=.*[!@#$%^&*]) - Assert a string has at least one special character.
+
+
