@@ -40,27 +40,19 @@ YellowBox.ignoreWarnings([
   "Warning: componentWillReceiveProps is deprecated"
 ]);
 
-// var config = {
-//   apiKey: "AIzaSyAOeJ62y2fxgTKt5Dvu1erqhi3DRYd6EF8",
-//   authDomain: "rnfirebasedb.firebaseapp.com",
-//   databaseURL: "https://rnfirebasedb.firebaseio.com",
-//   projectId: "rnfirebasedb",
-//   storageBucket: "rnfirebasedb.appspot.com",
-//   messagingSenderId: "769120087557",
-// };
-// Firebase.initializeApp(config);
+
 
 
 
 
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyArclN3RkTAWrVQRwBMipnqZTzcsBfmStU",
-  authDomain: "fir-authentication-81656.firebaseapp.com",
-  databaseURL: "https://fir-authentication-81656.firebaseio.com",
-  projectId: "fir-authentication-81656",
-  storageBucket: "fir-authentication-81656.appspot.com",
-  messagingSenderId: "702955549462"
+  apiKey: "YourKey",
+  authDomain: "fir-authentication-Your Domain",
+  databaseURL: "Your db url",
+  projectId: "Your Project ID",
+  storageBucket: "Your bucket ",
+  messagingSenderId: " Your sender id "
 };
 Firebase.initializeApp(config);
 
