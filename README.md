@@ -22,8 +22,22 @@ The config code should look something like this:
 
 <p>
 This is built for a web environment, so we’ll need to convert it to pure JS to work with RN and add it to a react-native app.js file.
+
+```javascript
+// Initialize Firebase
+var config = {
+  apiKey: "YourKey",
+  authDomain: "fir-authentication-Your Domain",
+  databaseURL: "Your db url",
+  projectId: "Your Project ID",
+  storageBucket: "Your bucket ",
+  messagingSenderId: " Your sender id "
+};
+Firebase.initializeApp(config);
+
+```
 </p>
-<img src="https://user-images.githubusercontent.com/2509254/48685954-4d2f9b00-ebdf-11e8-8875-0fbc2744d090.png" alt="FirbaseConfiq" width="511" height="258">
+
 <p>
 add this import statement :
 
