@@ -26,7 +26,7 @@ This is built for a web environment, so we’ll need to convert it to pure JS to
 <img src="https://user-images.githubusercontent.com/2509254/48685954-4d2f9b00-ebdf-11e8-8875-0fbc2744d090.png" alt="FirbaseConfiq" width="511" height="258">
 <p>
 add this import statement :
-``` JavaScript
+```ruby
  import Firebase from "firebase"; 
  ```
  to your app.js 
