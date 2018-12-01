@@ -43,14 +43,38 @@ export default class CurrentUserScreen extends React.Component {
     this.readUserData();
   }
 
-  readUserData() {
+  // readUserData() {
 
+  //   const cUser = Firebase.auth().currentUser;
+  //   this.setState({ isLoading: true });
+  //   var ref = Firebase.database().ref("Users");
+  //   var query = ref.orderByChild("email").equalTo(cUser.email);
+  //   query.once("value", snapshot => {
+  //     snapshot.forEach(child => {
+  //       this.setState({
+  //         firstname: child.val().firstname,
+  //         lastname: child.val().lastname,
+  //         email: child.val().email,
+  //         isLoading: false
+  //       });
+
+  //       // console.log(child.key, child.val().bio);
+  //     });
+
+  //   });
+
+  // }
+  readUserData() {
+    
     const cUser = Firebase.auth().currentUser;
     this.setState({ isLoading: true });
-    var ref = Firebase.database().ref("Users");
+    var ref = Firebase.database().ref("Users/");
+    
     var query = ref.orderByChild("email").equalTo(cUser.email);
     query.once("value", snapshot => {
-      snapshot.forEach(child => {
+      if (snapshot.exists()){
+        const userData = snapshot.val();
+          snapshot.forEach(child => {
         this.setState({
           firstname: child.val().firstname,
           lastname: child.val().lastname,
@@ -58,9 +82,14 @@ export default class CurrentUserScreen extends React.Component {
           isLoading: false
         });
 
-        // console.log(child.key, child.val().bio);
+        console.log(child.key, child.val().email);
       });
-
+    }else{
+      ToastAndroid.show("no record found" , ToastAndroid.SHORT);
+    }
+    }).catch(error => {
+      console.log("error: "+error),
+        ToastAndroid.show("" + error, ToastAndroid.SHORT);
     });
 
   }
