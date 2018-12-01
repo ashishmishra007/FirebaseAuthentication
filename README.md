@@ -27,7 +27,7 @@ This is built for a web environment, so we’ll need to convert it to pure JS to
 <p>
 add this import statement :
 
-```
+```javascript
  import Firebase from "firebase"; 
  ```
  to your app.js 
